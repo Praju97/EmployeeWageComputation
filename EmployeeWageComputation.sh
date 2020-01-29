@@ -2,16 +2,17 @@
 
 echo "Welcome to Employee Wage Computation Program"
 
-ISPRESENT=1
-rand=$(($RANDOM%2))
+ISPARTTIME=1
+ISFULLTIME=2
+empRatePerHr=20
+rand=$(($RANDOM%3))
 
-if(($rand==1))
+if (( $ISFULLTIME==$rand ))
 then
-   empRatePerHr=20
    empHrs=8;
-   salary=$(($empHrs*$empRatePerHr))
 else
-   salary=0;
+   empHrs=4;
 fi
 
+salary=$(( $empHrs*$empRatePerHr ))
 echo $salary
